@@ -22,6 +22,7 @@ def make_preparation_func():
             "scenes": [{"begin": 25, "end": 1423, "type": "Scene"}] # dummies...
         }
         return data
+    return prepare_novel
 
 
 if __name__ == "__main__":
