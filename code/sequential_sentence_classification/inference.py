@@ -8,6 +8,7 @@ class SeqClassificationInference(Predictor):
     Predictor for the abstruct model
     """
     def predict_json(self, json_dict: JsonDict) -> JsonDict:
+        print("#############Only inference###########")
         print("************************P*************")
         pred_labels = []
         sentences = json_dict['sentences']
