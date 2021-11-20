@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 model=$1
 test_file=$2

@@ -23,6 +23,7 @@ if __name__ == "__main__":
     #reset_folder(pred_folder)
 
     for test_file in test_files:
+        print(f"Running inference on file {test_file}")
         test_file_path = "{}/{}".format(test_folder, test_file)
         tmp_file_path = "{}/{}".format(temp_folder, test_file + "l")
         predicted_file_path = "{}/{}".format(pred_folder, test_file + ".pred")
