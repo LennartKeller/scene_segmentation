@@ -27,8 +27,8 @@ def make_preparation_func():
 
 if __name__ == "__main__":
     prepare_novel = make_preparation_func()
-    novels = SRC_PATH.glob("*.txt")
-    for novel in novels:
+    novels = list(SRC_PATH.glob("*.txt"))
+    for novel in tqdm(novels):
         text = novel.read_text()
         data = prepare_novel(text)
         dest_file = DST_PATH / f"{novel.stem}.json"
