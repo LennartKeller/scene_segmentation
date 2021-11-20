@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 from nltk import sent_tokenize
 from tqdm.auto import tqdm
@@ -12,6 +13,13 @@ DST_PATH = Path("data/test/")
 
 
 def prepare_novel(text):
+    
+    # Ugly hack
+    # texts = re.split(r'^1\.\n', text, flags=re.MULTILINE)
+    # if len(texts) > 1:
+    #     text = " ".join(texts[1:])
+    # else:
+    #     text = texts[0]
     text = " ".join(text.split())
     sentences = [
         {"begin": begin_idx, "end": end_idx}
@@ -20,7 +28,7 @@ def prepare_novel(text):
     data = { 
         "text": text,
         "sentences": sentences,
-        "scenes": [{"begin": 25, "end": 1423, "type": "Scene"}] # dummies...
+        "scenes": [{"begin": 0, "end": len(text)-1, "type": "Scene"}] # one scene to rule them all...
     }
     return data
 
